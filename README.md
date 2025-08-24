@@ -1,68 +1,41 @@
-# ​ File System Explorer
+# 🌿 File System Explorer
 
 A GUI-based **File System Explorer** built with **Python (Tkinter)**.  
-Explore, manage, and simulate file system behavior with:
+This project allows you to manage files and directories, view details, modify permissions, and simulate storage allocation using the **First-Fit strategy**.  
 
-- File/folder operations: Create, delete, rename, view details, modify permissions  
-- Storage allocation simulation using the **First-Fit** strategy, visualized for clarity
-
----
-
-## Technologies Used
-
-- **Python 3.x** – core language  
-- **Tkinter** – GUI framework  
-- **Pillow** – Image support and icons  
-- **(Optional)**: `virtualenv` for environment management  
+It is designed as an **educational tool** for learning about file systems and memory allocation in Operating Systems.
 
 ---
 
-## Project Overview
+## ✨ Features
+- 📂 **File Explorer**
+  - Create, delete, rename files & directories
+  - View details: size, timestamps, contents
+  - Show & modify permissions (Read/Write/Execute)
 
-| Module              | Purpose                                                                 |
-|---------------------|-------------------------------------------------------------------------|
-| `main.py`           | Launches the GUI and orchestrates both the File Explorer and Simulator  |
-| `StorageAllocator`  | Handles memory allocation logic (First-Fit), freeing, and visualization |
-| GUI Components      | Tabs, icons, and permission handlers for a clean user experience        |
+- 💾 **Storage Allocator**
+  - Allocate & deallocate blocks using **First-Fit**
+  - Display allocation map visually
 
----
-
-## File Structure
-
-├── main.py
-├── requirements.txt
-├── README.md
-└── LICENSE
-
+- 🎨 **User Interface**
+  - Modern themed UI
+  - Emoji-based icons for better visualization
 
 ---
 
-## Getting Started
+## ⚙️ Dependencies
 
-### 1. Clone the Repository
+This project requires the following:
 
-```bash
-git clone https://github.com/kaz3ww/file-system-explorer.git
-cd file-system-explorer
+- **Python 3.x**
+- **Tkinter** (comes preinstalled with Python)
+- **Pillow** (`pip install Pillow`)
 
-class StorageAllocator:
-    def __init__(self, size=100):
-        self.size = size
-        self.blocks = [0] * size
+For development (optional):
+- **flake8** – Code linting
+- **black** – Code formatting
 
-    def first_fit_allocate(self, size):
-        start = -1
-        free_blocks = 0
-        for i, block in enumerate(self.blocks):
-            if block == 0:
-                if free_blocks == 0:
-                    start = i
-                free_blocks += 1
-                if free_blocks == size:
-                    for j in range(start, start + size):
-                        self.blocks[j] = 1
-                    return start
-            else:
-                free_blocks = 0
-                start = -1
-        return -1  # Not enough space
+---
+
+
+
