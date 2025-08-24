@@ -45,6 +45,24 @@ Explore, manage, and simulate file system behavior with:
 git clone https://github.com/kaz3ww/file-system-explorer.git
 cd file-system-explorer
 
+class StorageAllocator:
+    def __init__(self, size=100):
+        self.size = size
+        self.blocks = [0] * size
 
-
-
+    def first_fit_allocate(self, size):
+        start = -1
+        free_blocks = 0
+        for i, block in enumerate(self.blocks):
+            if block == 0:
+                if free_blocks == 0:
+                    start = i
+                free_blocks += 1
+                if free_blocks == size:
+                    for j in range(start, start + size):
+                        self.blocks[j] = 1
+                    return start
+            else:
+                free_blocks = 0
+                start = -1
+        return -1  # Not enough space
