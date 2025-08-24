@@ -31,9 +31,6 @@ This project requires the following:
 - **Tkinter** (comes preinstalled with Python)
 - **Pillow** (`pip install Pillow`)
 
-For development (optional):
-- **flake8** – Code linting
-- **black** – Code formatting
 
 ---
 
