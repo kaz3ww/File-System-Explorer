@@ -1,0 +1,7 @@
+# GUI dependencies
+Pillow>=10.0.0        # Image handling for icons
+tk                   # Tkinter GUI (preinstalled with Python, but listed for clarity)
+
+# Development & linting (optional, for contributors)
+flake8>=6.0.0        # Code linting for clean Python code
+black>=23.0.0        # Code formatter
